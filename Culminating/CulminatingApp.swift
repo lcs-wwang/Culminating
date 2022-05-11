@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct CulminatingApp: App {
+    //MARK: stored properties
+    @State var favourite: [Mealplan] = []
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Searchview()
         }
     }
 }

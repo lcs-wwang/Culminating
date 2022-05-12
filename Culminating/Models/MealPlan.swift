@@ -32,6 +32,7 @@ struct Mealplan: Decodable {
     let readyInMinutes3: Int
     let servings3: Int
     let sourceUrl3: String
+    
     //nutritional fact
     let calories: Double
     let fat: Double

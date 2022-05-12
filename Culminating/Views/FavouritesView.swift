@@ -23,12 +23,12 @@ struct FavouritesView: View {
                     Spacer()
                     
                 } else {
-                    List(favourites, id: \.id) {currentMealplan in
+                    List(favourites, id: \.id1) {currentMealPlan in
                         NavigationLink(destination:
-                            DetailView(Mealplan: currentMealplan,
-                            inFavourites: false, favourites:
+                                        DetailView(mealPlan: currentMealPlan,
+                                                   infavourites: true, favourites:
                             $favourites)) {
-                            ListItemView(mealPlan: currentMealplan)
+                            ListItemView(mealPlan: currentMealPlan)
                         }
                     }
                 }

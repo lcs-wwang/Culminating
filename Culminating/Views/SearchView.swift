@@ -21,8 +21,8 @@ struct Searchview: View {
                     List(foundMealPlans, id:\.id1) {currentMealplan in
                         
                         NavigationLink(destination:
-                                        DetailView(Mealplan: currentMealplan,
-                                                   inFavourites: false, favourites:
+                                        DetailView(mealPlan: currentMealplan,
+                                                   infavourites: false, favourites:
                                                     $favourites)) {
                             ListItemView(mealPlan: currentMealplan)
                         }
@@ -48,10 +48,34 @@ struct Searchview: View {
             }
         }
     }
+    
+    //MARK: functions
+    
+    //https://api.spoonacular.com/mealplanner/generate?timeFrame=day
+    // api key:
+    // 733fb635c97d403e89b5bd4e95fccbee
+    func fetchedResults() async {
+        
+        let url = URL(string: "https://api.spoonacular.com/mealplanner/generate?timeFrame=day")!
+        var request = URLRequest(url: url)
+        request.setValue("application json", forHTTPHeaderField: "accept")
+        request.httpMethod = "Get"
+        let urlSession = URLSession.shared
+        do {
+            let (data, _) = try await urlSession.data(for: request)
+            print(String(data: data, encoding: .utf8)!)
+            let decodedSearchResult = try JSONDecoder().decode(SearchResult.self, from: data)
+            foundMealPlans = decodedSearchResult.results
+        } catch {
+            print("Could not retrieve / decode JSON from endpoint.")
+            print(error)
+        }
+        
+    }
 }
 
-struct SearchView: PreviewProvider {
+struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        Searchview(favourites: .constant([testMealPlan]))
+        Searchview(favourites: .constant([testMealPlan]), foundMealPlans: [])
     }
 }

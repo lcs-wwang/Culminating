@@ -14,7 +14,20 @@ struct CulminatingApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Searchview()
+            
+            TabView{
+                
+                Searchview(favourites: $favourite, foundMealPlans: [])
+                    .tabItem{
+                        Image(systemName: "doc.text.magnifyingglass")
+                        Text("Search")
+                    }
+                FavouritesView(favourites: $favourite)
+                    .tabItem {
+                        Image(systemName: "list.star")
+                        Text("Favourites")
+                    }
+            }
         }
     }
 }

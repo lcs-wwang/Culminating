@@ -8,13 +8,39 @@
 import SwiftUI
 
 struct FavouritesView: View {
+    //MARK: stored properties
+    @Binding var favourites: [Mealplan]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            VStack{
+                if favourites.isEmpty{
+                    
+                    Spacer()
+                    Text("No Favourite meal plan yet")
+                        .font(.title)
+                        .foregroundColor(.secondary)
+                    
+                    Spacer()
+                    
+                } else {
+                    List(favourites, id: \.id) {currentMealplan in
+                        NavigationLink(destination:
+                            DetailView(Mealplan: currentMealplan,
+                            inFavourites: false, favourites:
+                            $favourites)) {
+                            ListItemView(mealPlan: currentMealplan)
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Favourites")
+        }
+        
     }
 }
 
 struct FavouritesView_Previews: PreviewProvider {
     static var previews: some View {
-        FavouritesView()
+        FavouritesView(favourites: .constant([testMealPlan]))
     }
 }

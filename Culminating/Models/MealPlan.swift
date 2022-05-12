@@ -38,4 +38,22 @@ struct Mealplan: Decodable {
     let protein: Double
 }
 
-let testMealPlan = Mealplan(id1: 655219, title1: "Peanut Butter And Chocolate Oatmeal", imageType1: "jpg", readyInMinutes1: 45, servings1: 1, sourceUrl1: "https://spoonacular.com/recipes/peanut-butter-and-chocolate-oatmeal-655219", id2: 649931, title2: "Lentil Salad With Vegetables", imageType2: "jpg", readyInMinutes2: 45, servings2: 4, sourceUrl2: "https://spoonacular.com/recipes/lentil-salad-with-vegetables-649931", id3: 632854, title3: "Asian Noodles", imageType3: "jpg", readyInMinutes3: 45, servings3: 4, sourceUrl3: "https://spoonacular.com/recipes/asian-noodles-632854", calories: 1735.81, fat: 69.22, protein: 55.43)
+let testMealPlan = Mealplan(id1: 655219,
+                            title1: "Peanut Butter And Chocolate Oatmeal",
+                            imageType1: "jpg",
+                            readyInMinutes1: 45,
+                            servings1: 1,
+                            sourceUrl1: "https://spoonacular.com/recipes/peanut-butter-and-chocolate-oatmeal-655219", id2: 649931, title2: "Lentil Salad With Vegetables",
+                            imageType2: "jpg",
+                            readyInMinutes2: 45,
+                            servings2: 4,
+                            sourceUrl2: "https://spoonacular.com/recipes/lentil-salad-with-vegetables-649931",
+                            id3: 632854,
+                            title3: "Asian Noodles",
+                            imageType3: "jpg",
+                            readyInMinutes3: 45,
+                            servings3: 4,
+                            sourceUrl3: "https://spoonacular.com/recipes/asian-noodles-632854",
+                            calories: 1735.81,
+                            fat: 69.22,
+                            protein: 55.43)

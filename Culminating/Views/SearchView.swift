@@ -22,7 +22,7 @@ struct Searchview: View {
                         
                         NavigationLink(destination:
                                         DetailView(mealPlan: currentMealplan,
-                                                   infavourites: false, favourites:
+                                                   inFavourites: false, favourites:
                                                     $favourites)) {
                             ListItemView(mealPlan: currentMealplan)
                         }

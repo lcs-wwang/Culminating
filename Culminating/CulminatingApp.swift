@@ -27,7 +27,9 @@ struct CulminatingApp: App {
                         Image(systemName: "list.star")
                         Text("Favourites")
                     }
-                HomePageView(mealPlan: testMealPlan)
+                HomePageView(mealPlan: testMealPlan,
+                             inFavourites: false,
+                              favourites: .constant([]))
                     .tabItem {
                         Image(systemName: "house")
                         Text("Main")

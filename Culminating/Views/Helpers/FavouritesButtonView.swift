@@ -20,7 +20,7 @@ struct FavouritesButtonView: View {
             HStack{
                 Text(inFavourites ? "Remove from\nfavourites" :"Add to\nFavourites")
                     .multilineTextAlignment(.center)
-                Image(systemName: inFavourites ? "suit.heart.fill" : "suit.heart")
+                Image(systemName: inFavourites ? "heart.circle.fill" : "heart.circle")
                     .resizable()
                     .frame(width: 40, height: 40)
                     .aspectRatio(contentMode: .fit)

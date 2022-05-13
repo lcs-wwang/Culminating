@@ -5,6 +5,7 @@
 //  Created by Winston Wang on 2022-05-11.
 //
 
+
 import SwiftUI
 
 struct FavouritesView: View {
@@ -23,7 +24,7 @@ struct FavouritesView: View {
                     Spacer()
                     
                 } else {
-                    List(favourites, id: \.id1) {currentMealPlan in
+                    List(favourites, id: \.id) {currentMealPlan in
                         NavigationLink(destination:
                                         DetailView(mealPlan: currentMealPlan,
                                                    inFavourites: true, favourites:

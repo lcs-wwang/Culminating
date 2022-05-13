@@ -35,7 +35,7 @@ struct FavouritesButtonView: View {
             inFavourites = true
         } else {
             favourites.removeAll(where: {currentMealPlanInList in
-                currentMealPlanInList.id1 == mealPlan.id1
+                currentMealPlanInList.id == mealPlan.id
             })
             inFavourites = false
         }

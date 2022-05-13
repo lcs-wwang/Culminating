@@ -9,6 +9,7 @@ import Foundation
 
 struct SearchResult: Decodable {
     
-    let results: [Mealplan]
+    let meals: [Mealplan]
+    let nutritionalFacts: NutritionalFacts
     
 }

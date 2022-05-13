@@ -12,7 +12,7 @@ struct HomePageView: View {
     var mealPlan: Mealplan
     @State var inFavourites: Bool
     @Binding var favourites: [Mealplan]
-    @State var currentMealPlan: Mealplan = testMealPlan
+    @State var currentMealPlan: [Mealplan] = []
     var body: some View {
         NavigationView{
             VStack(alignment: .leading){
@@ -23,7 +23,11 @@ struct HomePageView: View {
                 Button(action:{
             
                     Task {
-                        await loadNewMealPlan()
+                        do {
+                           try await loadNewMealPlan()
+                        } catch {
+                            print(error.localizedDescription)
+                        }
                     }
                     
                 }, label: {
@@ -40,7 +44,7 @@ struct HomePageView: View {
                     FavouritesButtonView(mealPlan: mealPlan, inFavourites: $inFavourites, favourites: $favourites)
                     
                 }
-                Text(currentMealPlan.title1)
+                Text(currentMealPlan[0].title)
                 
                 
                 Spacer()
@@ -48,12 +52,12 @@ struct HomePageView: View {
                 
                 Text("Lunch")
                     .font(.title2)
-                Text(currentMealPlan.title2)
+                Text(currentMealPlan[1].title)
                 Spacer()
                 
                 Text("Dinner")
                     .font(.title2)
-                Text(currentMealPlan.title3)
+                Text(currentMealPlan[2].title)
                 Spacer()
                 
             }
@@ -64,33 +68,16 @@ struct HomePageView: View {
         
     }
     //MARK: functions
-    //https://api.spoonacular.com/mealplanner/generate?timeFrame=day
-    // api key:
-    // 733fb635c97d403e89b5bd4e95fccbee
-    /*
-    func loadNewMealPlan() async {
-        let url = URL(string: "https://api.spoonacular.com/mealplanner/generate?apiKey=733fb635c97d403e89b5bd4e95fccbee&timeFrame=day")!
-        var request = URLRequest(url: url)
-        request.setValue("application/json",
-                         forHTTPHeaderField: "Accept")
-        let urlSession = URLSession.shared
-        do {
-            // Get the rU.lda der aw data from the endpoint
-            let (data, _) = try await urlSession.data(for: request)
-            currentMealPlan = try JSONDecoder().decode(Mealplan.self, from: data)
-        } catch {
-            print("Could not retrieve or decode the JSON from endpoint.")
-            print(error)
-        }
-    }
-*/
-    private func fetch() async throws -> loadNewMealPlan() {
+   
+    func loadNewMealPlan() async throws {
         let urlsession = URLSession.shared
         let url = URL(string: "https://api.spoonacular.com/mealplanner/generate?apiKey=733fb635c97d403e89b5bd4e95fccbee&timeFrame=day")
-        let (data, _) = try await URLSession.data(from: url!)
-        let decoded = try JSONDecoder().decode(response.self, from: data)
-        return decoded.results
+        let (data, _) = try await urlsession.data(from: url!)
+        let decoded = try JSONDecoder().decode(SearchResult.self, from: data)
+        currentMealPlan = decoded.meals
+        
     }
+    
 }
 
 struct HomePageView_Previews: PreviewProvider {

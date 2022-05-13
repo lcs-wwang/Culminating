@@ -18,7 +18,7 @@ struct Searchview: View {
         NavigationView{
             ZStack{
                 VStack{
-                    List(foundMealPlans, id:\.id1) {currentMealplan in
+                    List(foundMealPlans, id:\.id) {currentMealplan in
                         
                         NavigationLink(destination:
                                         DetailView(mealPlan: currentMealplan,
@@ -65,7 +65,7 @@ struct Searchview: View {
             let (data, _) = try await urlSession.data(for: request)
             print(String(data: data, encoding: .utf8)!)
             let decodedSearchResult = try JSONDecoder().decode(SearchResult.self, from: data)
-            foundMealPlans = decodedSearchResult.results
+            foundMealPlans = decodedSearchResult.meals
         } catch {
             print("Could not retrieve / decode JSON from endpoint.")
             print(error)

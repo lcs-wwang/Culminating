@@ -15,13 +15,13 @@ struct ListItemView: View {
     //MARK: computed properties
     var body: some View {
         VStack(alignment: .leading) {
-            Text(mealPlan.title1)
+            Text(mealPlan.title)
             
-            Text(mealPlan.imageType1)
+            Text(mealPlan.imageType)
             
-            Text(mealPlan.sourceUrl2)
+            Text(mealPlan.sourceUrl)
             
-            Text(mealPlan.sourceUrl1)
+            Text(mealPlan.sourceUrl)
                 .font(.caption)
         }
     }

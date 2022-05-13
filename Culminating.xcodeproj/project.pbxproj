@@ -18,6 +18,7 @@
 		4DC9DF6A282C17B000C4A0D1 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC9DF69282C17B000C4A0D1 /* FavouritesView.swift */; };
 		4DC9DF6C282C17BE00C4A0D1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC9DF6B282C17BE00C4A0D1 /* DetailView.swift */; };
 		4DC9DF6E282C49CD00C4A0D1 /* searchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC9DF6D282C49CD00C4A0D1 /* searchResult.swift */; };
+		4DEFAF65282DD552001BB8CA /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEFAF64282DD551001BB8CA /* HomePageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		4DC9DF69282C17B000C4A0D1 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 		4DC9DF6B282C17BE00C4A0D1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4DC9DF6D282C49CD00C4A0D1 /* searchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchResult.swift; sourceTree = "<group>"; };
+		4DEFAF64282DD551001BB8CA /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				4DC9DF64282C146400C4A0D1 /* Helpers */,
+				4DEFAF64282DD551001BB8CA /* HomePageView.swift */,
 				4D39FE27282C0E41005D52C2 /* SearchView.swift */,
 				4DC9DF69282C17B000C4A0D1 /* FavouritesView.swift */,
 				4DC9DF6B282C17BE00C4A0D1 /* DetailView.swift */,
@@ -186,6 +189,7 @@
 				4D39FE28282C0E41005D52C2 /* SearchView.swift in Sources */,
 				4DC9DF6A282C17B000C4A0D1 /* FavouritesView.swift in Sources */,
 				4D87841B282D66DF009B450F /* FavouritesButtonView.swift in Sources */,
+				4DEFAF65282DD552001BB8CA /* HomePageView.swift in Sources */,
 				4DC9DF6C282C17BE00C4A0D1 /* DetailView.swift in Sources */,
 				4DC9DF6E282C49CD00C4A0D1 /* searchResult.swift in Sources */,
 				4D878417282D5F0A009B450F /* ListItemView.swift in Sources */,

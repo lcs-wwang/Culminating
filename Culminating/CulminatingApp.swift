@@ -27,6 +27,11 @@ struct CulminatingApp: App {
                         Image(systemName: "list.star")
                         Text("Favourites")
                     }
+                HomePageView()
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("Main")
+                    }
             }
         }
     }

@@ -56,7 +56,7 @@ struct Searchview: View {
     // 733fb635c97d403e89b5bd4e95fccbee
     func fetchedResults() async {
         
-        let url = URL(string: "https://api.spoonacular.com/mealplanner/generate?timeFrame=day")!
+        let url = URL(string: "https://api.spoonacular.com/mealplanner/generate?apiKey=733fb635c97d403e89b5bd4e95fccbee&timeFrame=day")!
         var request = URLRequest(url: url)
         request.setValue("application json", forHTTPHeaderField: "accept")
         request.httpMethod = "Get"

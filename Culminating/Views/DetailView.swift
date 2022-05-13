@@ -14,26 +14,7 @@ struct DetailView: View {
     @Binding var favourites: [Mealplan]
     var body: some View {
         VStack(alignment: .leading){
-            HStack{
-                Text("BREAKFAST")
-                    .font(.title2)
-                FavouritesButtonView(mealPlan: mealPlan, inFavourites: $infavourites, favourites: $favourites)
-                    
-            }
-            .padding()
-            HStack{
-                Text("LUNCH")
-                    .font(.title2)
-                FavouritesButtonView(mealPlan: mealPlan, inFavourites: $infavourites, favourites: $favourites)
-                    
-            }
-            .padding()
-            HStack{
-                Text("DINNER")
-                    .font(.title2)
-                FavouritesButtonView(mealPlan: mealPlan, inFavourites: $infavourites, favourites: $favourites)
-            }
-            .padding()
+            
         }
         .navigationTitle("MEAL PLAN")
     }

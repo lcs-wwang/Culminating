@@ -12,9 +12,9 @@ struct HomePageView: View {
     var mealPlan: Mealplan
     @State var inFavourites: Bool
     @Binding var favourites: [Mealplan]
-    @State var currentMealPlan: [Mealplan] = []
+    @State var currentMealPlan: [Mealplan] = [testMealPlan, lunch, dinner]
     var body: some View {
-        NavigationView{
+        NavigationView {
             VStack(alignment: .leading){
                 
                 //button to refresh a new meal plan
@@ -24,7 +24,8 @@ struct HomePageView: View {
             
                     Task {
                         do {
-                           try await loadNewMealPlan()
+                            try await loadNewMealPlan()
+                            inFavourites = false
                         } catch {
                             print(error.localizedDescription)
                         }
@@ -44,6 +45,7 @@ struct HomePageView: View {
                     FavouritesButtonView(mealPlan: mealPlan, inFavourites: $inFavourites, favourites: $favourites)
                     
                 }
+                
                 Text(currentMealPlan[0].title)
                 
                 
@@ -63,7 +65,13 @@ struct HomePageView: View {
             }
             .navigationBarTitle("Meal Plan")
             .padding()
-            
+        }
+        .task {
+            do {
+               try await loadNewMealPlan()
+            } catch {
+                print(error)
+            }
         }
         
     }

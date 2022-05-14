@@ -21,7 +21,7 @@ struct Searchview: View {
                     List(foundMealPlans, id:\.id) {currentMealplan in
                         
                         NavigationLink(destination:
-                                        DetailView(mealPlan: currentMealplan,
+                                        DetailView(mealPlan: currentMealplan, nutritionalFacts: testNutrutionalFacts,
                                                    inFavourites: false, favourites:
                                                     $favourites)) {
                             ListItemView(mealPlan: currentMealplan)

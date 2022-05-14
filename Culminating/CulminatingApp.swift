@@ -17,6 +17,14 @@ struct CulminatingApp: App {
             
             TabView{
                 
+                HomePageView(mealPlan: testMealPlan,
+                             inFavourites: false,
+                              favourites: $favourite)
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("Main")
+                    }
+                
                 Searchview(favourites: $favourite, foundMealPlans: [])
                     .tabItem{
                         Image(systemName: "doc.text.magnifyingglass")
@@ -27,13 +35,7 @@ struct CulminatingApp: App {
                         Image(systemName: "list.star")
                         Text("Favourites")
                     }
-                HomePageView(mealPlan: testMealPlan,
-                             inFavourites: false,
-                              favourites: .constant([]))
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Main")
-                    }
+                
             }
         }
     }

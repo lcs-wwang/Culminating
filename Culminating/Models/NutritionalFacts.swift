@@ -15,3 +15,4 @@ struct NutritionalFacts: Decodable {
 }
 
 
+let testNutrutionalFacts = NutritionalFacts(calories: 1735.81, carbohydrates: 235.17, fat: 69.22, protein: 55.43)

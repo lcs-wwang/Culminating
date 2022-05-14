@@ -17,20 +17,22 @@ struct DetailView: View {
     var body: some View {
         NavigationView{
             VStack(alignment: .leading){
-                
-                HStack{
-                    Text("Breakfast")
-                        .font(.title2)
+                Group{
+                    HStack{
+                        Text("Breakfast")
+                            .font(.title2)
+                        Spacer()
+                        FavouritesButtonView(mealPlan: mealPlan, inFavourites: $inFavourites, favourites: $favourites)
+                        
+                        
+                    }
+                    Text(mealPlan.title)
+                    Image(mealPlan.imageType)
+                    
+                    
                     Spacer()
-                    FavouritesButtonView(mealPlan: mealPlan, inFavourites: $inFavourites, favourites: $favourites)
-                    
-                    
                 }
-                Text(mealPlan.title)
-                Image(mealPlan.imageType)
                 
-                
-                Spacer()
                 
                 
                 Text("Lunch")
@@ -55,7 +57,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(mealPlan: testMealPlan,
+        DetailView(mealPlan: testMealPlan, nutritionalFacts: testNutrutionalFacts,
                    inFavourites: false,
                    favourites: .constant([]))
     }

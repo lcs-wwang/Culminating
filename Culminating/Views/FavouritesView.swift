@@ -26,7 +26,7 @@ struct FavouritesView: View {
                 } else {
                     List(favourites, id: \.id) {currentMealPlan in
                         NavigationLink(destination:
-                                        DetailView(mealPlan: currentMealPlan,
+                                        DetailView(mealPlan: currentMealPlan, nutritionalFacts: testNutrutionalFacts,
                                                    inFavourites: true, favourites:
                             $favourites)) {
                             ListItemView(mealPlan: currentMealPlan)

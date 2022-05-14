@@ -4,7 +4,7 @@
 //
 //  Created by Winston Wang on 2022-05-11.
 //
-
+/*
 import SwiftUI
 
 struct Searchview: View {
@@ -79,3 +79,4 @@ struct SearchView_Previews: PreviewProvider {
         Searchview(favourites: .constant([testMealPlan]), foundMealPlans: [])
     }
 }
+ */

@@ -23,29 +23,38 @@ struct DetailView: View {
                             .font(.title2)
                         Spacer()
                         FavouritesButtonView(mealPlan: mealPlan, inFavourites: $inFavourites, favourites: $favourites)
+                        Text(mealPlan.title)
+                        Image(mealPlan.imageType)
                         
+                        
+                        Spacer()
                         
                     }
-                    Text(mealPlan.title)
-                    Image(mealPlan.imageType)
                     
-                    
-                    Spacer()
                 }
                 
                 
-                
-                Text("Lunch")
-                    .font(.title)
-                Text(mealPlan.title)
-                Image(mealPlan.imageType)
-                Spacer()
-                
-                Text("Dinner")
-                    .font(.title)
-                Text(mealPlan.title)
-                Image(mealPlan.imageType)
-                Spacer()
+                Group{
+                    Text("Lunch")
+                        .font(.title)
+                    Text(mealPlan.title)
+                    Image(mealPlan.imageType)
+                    Spacer()
+                    
+                    Text("Dinner")
+                        .font(.title)
+                    Text(mealPlan.title)
+                    Image(mealPlan.imageType)
+                    
+            
+                   /*
+                    Text(nutritionalFacts.protein)
+                    Text(nutritionalFacts.fat)
+                    Text(nutritionalFacts.calories)
+                    Text(nutritionalFacts.carbohydrates)
+                    Spacer()
+                    */
+                }
                 
             }
             .navigationBarTitle("Meal Plan")
